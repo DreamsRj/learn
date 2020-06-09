@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="address" class="com.dreamsrj.di.Address">
+        <property name="address" value="四川省成都市天赋新区"/>
+    </bean>
+
+    <!--constructor with arg-name -->
+    <bean name="userOne" class="com.dreamsrj.di.User">
+        <constructor-arg name="name" value="dreamsrj"/>
+        <constructor-arg name="age" value="28"/>
+        <constructor-arg name="address" ref="address"/>
+    </bean>
+
+    <bean name="userTwo" class="com.dreamsrj.di.User">
+        <constructor-arg type="java.lang.String" index="0" value="dreamsrj"/>
+        <constructor-arg type="int" index="1" value="29"/>
+        <constructor-arg type="com.dreamsrj.di.Address" index="2" ref="address"/>
+    </bean>
+
+
+    <!--setter-->
+    <bean class="com.dreamsrj.di.User">
+        <property name="address" ref="address"/>
+        <property name="age" value="23"/>
+        <property name="name" value="dreamsrj"/>
+    </bean>
+
+</beans>

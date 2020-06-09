@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       >
+    <bean id="lisi，jack" class="com.dreamsrj.Person"/>
+
+
+    <bean id="personController" class="com.dreamsrj.controller.PersonController"  scope="si">
+        <!--通过setter注入-->
+        <property name="personService" ref="personService"/>
+    </bean>
+
+    <bean id="personService" class="com.dreamsrj.service.PersonServiceImpl">
+        <!--通过setter注入-->
+        <property name="dao" ref="personDao"/>
+    </bean>
+
+    <bean id="personDao" class="com.dreamsrj.dao.PersonDaoImpl"/>
+
+    <bean id="staitcFactoryMethod" class="com.dreamsrj.factory.ObjectFactory" factory-method="createInstance"/>
+
+    <!--使用原型模式创建对象-->
+    <bean id="userService" class="com.dreamsrj.service.UserServiceImpl" scope="prototype"/>
+</beans>
