@@ -5,19 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dreams.rj.learn</groupId>
-    <artifactId>learn</artifactId>
+    <artifactId>learn-spring-java-config</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>learn-httpclient</module>
-        <module>learn-javaRegex</module>
-        <module>learn-test</module>
-        <module>learn-spring-ioc</module>
-        <module>learn-spring-base</module>
-        <module>learn-spring-java-config</module>
-    </modules>
-    <packaging>pom</packaging>
 
-    <name>learn</name>
+    <name>learn-spring-java-config</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -32,8 +23,18 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+            <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
