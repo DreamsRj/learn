@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbc.url" value="jdbc:mysql://111.229.156.143:3306/test2"/>
+        <property name="" value=""/>
+    </properties>
+    <typeAliases>
+        <typeAlias type="com.dreams.rj.learn.pojo.User" alias="User"/>
+    </typeAliases>
+    
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/dreams/rj/learn/mapper/userMapper.xml"/>
+    </mappers>
+</configuration>

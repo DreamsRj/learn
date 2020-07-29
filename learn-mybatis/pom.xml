@@ -2,25 +2,16 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>learn</artifactId>
+        <groupId>com.dreams.rj.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dreams.rj.learn</groupId>
-    <artifactId>learn</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>learn-httpclient</module>
-        <module>learn-javaRegex</module>
-        <module>learn-test</module>
-        <module>learn-spring-ioc</module>
-        <module>learn-spring-base</module>
-        <module>learn-spring-java-config</module>
-        <module>learn-spring-javaconfig-web</module>
-        <module>learn-spring-validator</module>
-        <module>learn-mybatis</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>learn-mybatis</artifactId>
 
-    <name>learn</name>
+    <name>learn-mybatis</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -30,27 +21,23 @@
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>5.2.0.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>5.2.0.RELEASE</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.49</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -97,5 +84,18 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 </project>
