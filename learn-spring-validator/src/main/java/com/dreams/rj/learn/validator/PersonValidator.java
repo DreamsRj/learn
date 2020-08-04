@@ -23,6 +23,5 @@ public class PersonValidator implements Validator {
         } else if (p.getAge() > 110) {
             errors.rejectValue("age", "too.darn.old");
         }
-
     }
 }
