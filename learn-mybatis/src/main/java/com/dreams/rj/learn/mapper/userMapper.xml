@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dreams.rj.learn.mapper.UserMapper">
+    <!--    <cache blocking="" eviction="" flushInterval="" readOnly="" size="" type=""/>-->
+    <cache/>
     <select id="selectOne" resultType="User">
         select * from user where id = #{id}
     </select>

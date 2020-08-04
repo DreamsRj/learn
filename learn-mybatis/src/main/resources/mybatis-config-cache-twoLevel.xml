@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--<settings>
-        &lt;!&ndash;        <setting name="localCacheScope" value="SESSION"/>&ndash;&gt;
+    <settings>
         <setting name="localCacheScope" value="STATEMENT"/>
-    </settings>-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
 
     <typeAliases>
         <typeAlias type="com.dreams.rj.learn.pojo.User" alias="User"/>
